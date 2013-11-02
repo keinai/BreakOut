@@ -6,7 +6,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class UnbreakBrick extends CObject{
+public class UnbreakBrick extends AbstractBrick{
 	String bricksrc = "images/Ver1/unbreakBrick.png";
     boolean destroyed;
     int score=10;
@@ -40,4 +40,22 @@ public class UnbreakBrick extends CObject{
     public void draw(Graphics g){
     	g.drawImage(image,x,y,width,heigth,null);
     }
+
+	@Override
+	public void destroy() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean isSetDie() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public int getType() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

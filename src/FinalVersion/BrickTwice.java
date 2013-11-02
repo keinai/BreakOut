@@ -7,7 +7,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class BrickTwice extends CObject{
+public class BrickTwice extends AbstractBrick{
 	boolean destroyed;
 	int live;
     int score=10;
@@ -93,4 +93,10 @@ public class BrickTwice extends CObject{
     public int getLive(){
     	return live;
     }
+
+	@Override
+	public int getType() {
+		// TODO Auto-generated method stub
+		return 2;
+	}
 }

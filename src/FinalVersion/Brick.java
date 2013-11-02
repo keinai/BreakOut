@@ -12,7 +12,7 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
-public class Brick extends CObject{	
+public class Brick extends AbstractBrick{	
 		
     boolean destroyed;
     int score=10;
@@ -96,5 +96,11 @@ public class Brick extends CObject{
     		setDestroyed(true);
     	}    	    	
     	g.drawImage(image,x,y,width,heigth,null);
-    }    
+    }
+
+	@Override
+	public int getType() {
+		// TODO Auto-generated method stub
+		return 1;
+	}    
 }

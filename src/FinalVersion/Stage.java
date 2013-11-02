@@ -6,6 +6,7 @@ import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
@@ -130,6 +131,10 @@ public class Stage{
 			maxI=14;
 		}
 		
+		// Create list Brick
+		//ArrayList<AbstractBrick> brickList = new ArrayList<AbstractBrick>();
+		
+		//Create Brick
 		for (int i = 0,k=0; i < maxI; i++) {
             for (int j = 0; j < 13; j++) {            	
             	if (pos[k]==1)
@@ -143,6 +148,10 @@ public class Stage{
            		k++;
            	}                
         }
+		
+		// Fix Code
+		//this.fixBrickList(brickList);
+		
 	}
 	
 	public void stagePaint(Graphics g){
@@ -325,5 +334,30 @@ public class Stage{
 	public BufferedImage getBackground(){		
 		return background;
 	}
+	
+	// Fix code (Phu)
+		public void fixBrickList(ArrayList<AbstractBrick> brickList) {
+
+			int unbreakCount = 0;
+			int singleCount = 0;
+			int twiceCount = 0;
+			System.out.println(brickList.size());
+			for (int i = 0; i < brickList.size(); i++) {
+				switch (brickList.get(i).getType()) {
+				case 0:
+					unbreaks[unbreakCount++] = (UnbreakBrick) brickList.get(i);
+					break;
+				case 1:
+					bricks[singleCount++] = (Brick) brickList.get(i);
+					break;
+				case 2:
+					brickstwice[twiceCount++] = (BrickTwice) brickList.get(i);
+					break;
+
+				}
+			}
+
+		}
+	
 	
 }
